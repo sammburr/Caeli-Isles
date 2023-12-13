@@ -1,0 +1,70 @@
+[gd_scene load_steps=11 format=3 uid="uid://d2dnq0ik473ay"]
+
+[ext_resource type="PackedScene" uid="uid://bwwhl6hftkw7t" path="res://basic_player.tscn" id="1_enlj8"]
+[ext_resource type="Script" path="res://main.gd" id="1_iixn7"]
+[ext_resource type="Texture2D" uid="uid://cx15nsnnbyaxq" path="res://misty_sky_8k.hdr" id="2_41emw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6t360"]
+size = Vector3(2, 2, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gmnnv"]
+size = Vector3(2, 2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_52owy"]
+size = Vector3(50, 0, 50)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_p2xq5"]
+size = Vector2(50, 50)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hruso"]
+panorama = ExtResource("2_41emw")
+
+[sub_resource type="Sky" id="Sky_1pwn5"]
+sky_material = SubResource("PanoramaSkyMaterial_hruso")
+
+[sub_resource type="Environment" id="Environment_p8kbt"]
+background_mode = 1
+background_color = Color(0.52549, 0.760784, 0.780392, 1)
+sky = SubResource("Sky_1pwn5")
+ambient_light_source = 3
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_iixn7")
+
+[node name="Basic Player" parent="." instance=ExtResource("1_enlj8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.37417, 0)
+ACCEL = 0.5
+IN_AIR_ACCEL = 0.1
+
+[node name="Box" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.93007, 3.88244, -5.99005)
+
+[node name="Collider" type="CollisionShape3D" parent="Box"]
+shape = SubResource("BoxShape3D_6t360")
+
+[node name="Mesh" type="MeshInstance3D" parent="Box"]
+mesh = SubResource("BoxMesh_gmnnv")
+
+[node name="Box2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3735, 5.91404, -7.02691)
+
+[node name="Collider" type="CollisionShape3D" parent="Box2"]
+shape = SubResource("BoxShape3D_6t360")
+
+[node name="Mesh" type="MeshInstance3D" parent="Box2"]
+mesh = SubResource("BoxMesh_gmnnv")
+
+[node name="Plane" type="StaticBody3D" parent="."]
+
+[node name="Collider" type="CollisionShape3D" parent="Plane"]
+shape = SubResource("BoxShape3D_52owy")
+
+[node name="Mesh" type="MeshInstance3D" parent="Plane"]
+mesh = SubResource("PlaneMesh_p2xq5")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.893462, -0.101429, 0.437537, -0.0876818, 0.916033, 0.391401, -0.440498, -0.388066, 0.809547, 0, 4.28111, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Sun"]
+environment = SubResource("Environment_p8kbt")

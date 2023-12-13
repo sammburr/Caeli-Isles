@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwwhl6hftkw7t"]
+
+[ext_resource type="Script" path="res://basic_player.gd" id="1_qq6iv"]
+[ext_resource type="Script" path="res://Head.gd" id="2_7yqcp"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_crila"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1rru0"]
+
+[node name="Basic Player" type="CharacterBody3D" node_paths=PackedStringArray("HEAD")]
+script = ExtResource("1_qq6iv")
+HEAD = NodePath("Head")
+KEY_BIND_UP = "forward"
+KEY_BIND_LEFT = "left"
+KEY_BIND_RIGHT = "right"
+KEY_BIND_DOWN = "backward"
+KEY_BIND_JUMP = "jump"
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_crila")
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_1rru0")
+
+[node name="Head" type="Node3D" parent="." node_paths=PackedStringArray("RAYCAST")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.637357, 0)
+script = ExtResource("2_7yqcp")
+RAYCAST = NodePath("Head Ray Cast")
+
+[node name="Player Camera" type="Camera3D" parent="Head"]
+
+[node name="Head Ray Cast" type="RayCast3D" parent="Head"]
+target_position = Vector3(0, 0, -20)

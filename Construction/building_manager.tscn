@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://byx2iwkyxe582"]
+
+[ext_resource type="Script" path="res://Construction/Building Manager.gd" id="1_i41v7"]
+[ext_resource type="PackedScene" uid="uid://bm3naqv8e0ni" path="res://Construction/Prefabs/Foundation.tscn" id="2_6flke"]
+[ext_resource type="PackedScene" uid="uid://chag3cdaedbl5" path="res://Construction/Prefabs/Foundation_Ghost.tscn" id="3_spqx5"]
+
+[node name="Building Manager" type="Node"]
+script = ExtResource("1_i41v7")
+GHOST_FOUNDATION = ExtResource("3_spqx5")
+FOUNDATION = ExtResource("2_6flke")

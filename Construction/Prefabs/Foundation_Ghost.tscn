@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://chag3cdaedbl5"]
+
+[ext_resource type="Script" path="res://Construction/Construction.gd" id="1_gvt3k"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fds8d"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.12549)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kavq2"]
+material = SubResource("StandardMaterial3D_fds8d")
+size = Vector3(4, 0.4, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k8oul"]
+size = Vector3(4, 0.2, 4)
+
+[node name="Foundation" type="Node3D"]
+script = ExtResource("1_gvt3k")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+mesh = SubResource("BoxMesh_kavq2")
+
+[node name="Placement" type="Area3D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Placement"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+shape = SubResource("BoxShape3D_k8oul")

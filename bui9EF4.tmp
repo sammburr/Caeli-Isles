@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://byx2iwkyxe582"]
+
+[ext_resource type="Script" path="res://Building Manager.gd" id="1_u2wqq"]
+[ext_resource type="PackedScene" uid="uid://bm3naqv8e0ni" path="res://Foundation.tscn" id="2_ei8ri"]
+
+[node name="Building Manager" type="Node"]
+script = ExtResource("1_u2wqq")
+GHOST_FOUNDATION = ExtResource("2_ei8ri")
