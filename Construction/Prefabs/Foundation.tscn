@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bm3naqv8e0ni"]
 
 [ext_resource type="Script" path="res://Construction/Socket.gd" id="1_cs2ot"]
-[ext_resource type="Script" path="res://Construction/Prefabs/Block Building.gd" id="2_q6443"]
+[ext_resource type="Script" path="res://Construction/Block Building.gd" id="2_8qhei"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uu6gf"]
 albedo_color = Color(0.458824, 0.32549, 0.14902, 1)
@@ -77,7 +77,7 @@ shape = SubResource("BoxShape3D_jlfhg")
 [node name="Block Building" type="StaticBody3D" parent="."]
 collision_layer = 5
 collision_mask = 5
-script = ExtResource("2_q6443")
+script = ExtResource("2_8qhei")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Block Building"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)

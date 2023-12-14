@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://bwwhl6hftkw7t" path="res://basic_player.tscn" id="1_enlj8"]
 [ext_resource type="Script" path="res://main.gd" id="1_iixn7"]
-[ext_resource type="Texture2D" uid="uid://cx15nsnnbyaxq" path="res://misty_sky_8k.hdr" id="2_41emw"]
-[ext_resource type="PackedScene" uid="uid://byx2iwkyxe582" path="res://building_manager.tscn" id="3_cdbwd"]
+[ext_resource type="Texture2D" uid="uid://bdo3gyllm4mqm" path="res://misty_sky_8k.hdr" id="2_41emw"]
+[ext_resource type="PackedScene" uid="uid://byx2iwkyxe582" path="res://Construction/building_manager.tscn" id="3_cdbwd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6t360"]
 size = Vector3(2, 2, 2)

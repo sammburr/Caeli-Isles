@@ -1,10 +1,58 @@
-[gd_scene load_steps=4 format=3 uid="uid://byx2iwkyxe582"]
+[gd_scene load_steps=6 format=3 uid="uid://byx2iwkyxe582"]
 
 [ext_resource type="Script" path="res://Construction/Building Manager.gd" id="1_i41v7"]
 [ext_resource type="PackedScene" uid="uid://bm3naqv8e0ni" path="res://Construction/Prefabs/Foundation.tscn" id="2_6flke"]
 [ext_resource type="PackedScene" uid="uid://chag3cdaedbl5" path="res://Construction/Prefabs/Foundation_Ghost.tscn" id="3_spqx5"]
+[ext_resource type="PackedScene" uid="uid://b5jcph35ak3bl" path="res://Construction/Prefabs/Wall.tscn" id="4_wdxkm"]
+[ext_resource type="PackedScene" uid="uid://du25n6ktv34dy" path="res://Construction/Prefabs/Wall_Ghost.tscn" id="5_0b0aj"]
 
 [node name="Building Manager" type="Node"]
 script = ExtResource("1_i41v7")
 GHOST_FOUNDATION = ExtResource("3_spqx5")
 FOUNDATION = ExtResource("2_6flke")
+WALL = ExtResource("4_wdxkm")
+GHOST_WALL = ExtResource("5_0b0aj")
+
+[node name="Building UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Wall" type="Button" parent="Building UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 87.0
+offset_top = -16.0
+offset_right = 129.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Wall
+"
+
+[node name="Foundation" type="Button" parent="Building UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -49.0
+offset_top = -15.0
+offset_right = 48.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Foundation"
+
+[connection signal="mouse_entered" from="Building UI/Wall" to="." method="_on_wall_mouse_entered"]
+[connection signal="mouse_exited" from="Building UI/Wall" to="." method="_on_wall_mouse_exited"]
+[connection signal="pressed" from="Building UI/Wall" to="." method="_on_wall_pressed"]
+[connection signal="mouse_entered" from="Building UI/Foundation" to="." method="_on_foundation_mouse_entered"]
