@@ -3,11 +3,11 @@
 [ext_resource type="Script" path="res://Construction/Socket.gd" id="1_avll5"]
 [ext_resource type="Script" path="res://Construction/Block Building.gd" id="2_xbn5n"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uu6gf"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gfw88"]
 albedo_color = Color(0.458824, 0.32549, 0.14902, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_kavq2"]
-material = SubResource("StandardMaterial3D_uu6gf")
+material = SubResource("StandardMaterial3D_gfw88")
 size = Vector3(4, 0.4, 4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jlfhg"]

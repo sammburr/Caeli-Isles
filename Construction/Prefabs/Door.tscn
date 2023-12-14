@@ -8,7 +8,7 @@ albedo_color = Color(0.458824, 0.32549, 0.14902, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_kavq2"]
 material = SubResource("StandardMaterial3D_uu6gf")
-size = Vector3(4, 0.4, 4)
+size = Vector3(1, 0.4, 4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jlfhg"]
 size = Vector3(1.12483, 4, 0.4)
@@ -22,15 +22,15 @@ size = Vector3(0.480527, 0.4, 3)
 [node name="Foundation" type="Node3D"]
 
 [node name="Frame Right" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.226138, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -1.51533, 2.4, -2.2)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -1.5, 2.4, -2.2)
 mesh = SubResource("BoxMesh_kavq2")
 
-[node name="Frame Left" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.226138, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.53283, 2.4, -2.2)
+[node name="Frame Right2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.5, 2.4, -2.2)
 mesh = SubResource("BoxMesh_kavq2")
 
-[node name="Frame Left2" type="MeshInstance3D" parent="."]
-transform = Transform3D(-9.88481e-09, -4.37114e-08, -1, -0.226138, 1.91069e-15, 4.37114e-08, 0, 1, -4.37114e-08, -0.00383401, 3.93492, -2.2)
+[node name="Frame Top" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -4.37114e-08, -1, -1, -4.37114e-08, 4.37114e-08, -4.37114e-08, 1, -4.37114e-08, 0, 3.9, -2.2)
 mesh = SubResource("BoxMesh_kavq2")
 
 [node name="Socket Right" type="StaticBody3D" parent="."]
@@ -88,9 +88,9 @@ collision_mask = 5
 script = ExtResource("2_m05t3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Block Building"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.30894, 0, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.24281, 0, 0)
 shape = SubResource("BoxShape3D_c106a")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Block Building"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.33875, 0, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.25008, 0, 0)
 shape = SubResource("BoxShape3D_c106a")

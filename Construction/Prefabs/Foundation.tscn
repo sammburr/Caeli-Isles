@@ -11,7 +11,7 @@ material = SubResource("StandardMaterial3D_uu6gf")
 size = Vector3(4, 0.4, 4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jlfhg"]
-size = Vector3(4, 0.4, 2)
+size = Vector3(4, 0.197372, 0.80497)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c106a"]
 size = Vector3(4, 0.4, 4)
@@ -32,7 +32,7 @@ script = ExtResource("1_cs2ot")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 4)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Socket Forward"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.241)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.40827)
 shape = SubResource("BoxShape3D_jlfhg")
 
 [node name="Socket Backward" type="StaticBody3D" parent="."]
@@ -45,7 +45,7 @@ script = ExtResource("1_cs2ot")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 4)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Socket Backward"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.241)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.59011e-08, 0, 2.42289)
 shape = SubResource("BoxShape3D_jlfhg")
 
 [node name="Socket Left" type="StaticBody3D" parent="."]
@@ -58,7 +58,7 @@ script = ExtResource("1_cs2ot")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 4)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Socket Left"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.241)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.13334e-09, 0, 2.42707)
 shape = SubResource("BoxShape3D_jlfhg")
 
 [node name="Socket Right" type="StaticBody3D" parent="."]
@@ -71,7 +71,7 @@ script = ExtResource("1_cs2ot")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 4)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Socket Right"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.241)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.79569e-09, 0, 2.41934)
 shape = SubResource("BoxShape3D_jlfhg")
 
 [node name="Block Building" type="StaticBody3D" parent="."]

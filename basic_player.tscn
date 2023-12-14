@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwwhl6hftkw7t"]
+[gd_scene load_steps=6 format=3 uid="uid://bwwhl6hftkw7t"]
 
 [ext_resource type="Script" path="res://basic_player.gd" id="1_qq6iv"]
 [ext_resource type="Script" path="res://Head.gd" id="2_7yqcp"]
@@ -6,6 +6,8 @@
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_crila"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1rru0"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xwqui"]
 
 [node name="Basic Player" type="CharacterBody3D" node_paths=PackedStringArray("HEAD")]
 script = ExtResource("1_qq6iv")
@@ -31,3 +33,26 @@ RAYCAST = NodePath("Head Ray Cast")
 
 [node name="Head Ray Cast" type="RayCast3D" parent="Head"]
 target_position = Vector3(0, 0, -20)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Cross Hair" type="TextureRect" parent="UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.5
+offset_top = -2.5
+offset_right = 2.5
+offset_bottom = 2.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_xwqui")
