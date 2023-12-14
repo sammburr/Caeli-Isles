@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5jcph35ak3bl"]
+[gd_scene load_steps=8 format=3 uid="uid://b5jcph35ak3bl"]
 
 [ext_resource type="Script" path="res://Construction/Socket.gd" id="1_avll5"]
 [ext_resource type="Script" path="res://Construction/Block Building.gd" id="2_xbn5n"]
@@ -11,10 +11,13 @@ material = SubResource("StandardMaterial3D_uu6gf")
 size = Vector3(4, 0.4, 4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jlfhg"]
-size = Vector3(4, 0.4, 2)
+size = Vector3(1.12483, 4, 0.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lyji0"]
+size = Vector3(2.84769, 1.125, 0.4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c106a"]
-size = Vector3(4, 0.4, 4)
+size = Vector3(3.13471, 0.4, 3)
 
 [node name="Foundation" type="Node3D"]
 
@@ -22,44 +25,53 @@ size = Vector3(4, 0.4, 4)
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.4, -2.2)
 mesh = SubResource("BoxMesh_kavq2")
 
-[node name="Socket Forward" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2.4, -2.2)
-collision_layer = 2
-collision_mask = 2
-script = ExtResource("1_avll5")
-
-[node name="Socket Pos" type="Node3D" parent="Socket Forward"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 4)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Socket Forward"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.241)
-shape = SubResource("BoxShape3D_jlfhg")
-
-[node name="Socket Left" type="StaticBody3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, -1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -1, 1.91069e-15, 0, 2.4, -2.2)
-collision_layer = 2
-collision_mask = 2
-script = ExtResource("1_avll5")
-
-[node name="Socket Pos" type="Node3D" parent="Socket Left"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 4)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Socket Left"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.241)
-shape = SubResource("BoxShape3D_jlfhg")
-
 [node name="Socket Right" type="StaticBody3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, -1, -4.37114e-08, 4.37114e-08, -4.37114e-08, 1, 1.91069e-15, 0, 2.4, -2.2)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_avll5")
 
 [node name="Socket Pos" type="Node3D" parent="Socket Right"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Socket Right"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.241)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0372, 2.40339, -2.20858)
 shape = SubResource("BoxShape3D_jlfhg")
+
+[node name="Socket Left" type="StaticBody3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_avll5")
+
+[node name="Socket Pos" type="Node3D" parent="Socket Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Socket Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.037, 2.403, -2.209)
+shape = SubResource("BoxShape3D_jlfhg")
+
+[node name="Socket Top Front" type="StaticBody3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_avll5")
+
+[node name="Socket Pos" type="Node3D" parent="Socket Top Front"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.4, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Socket Top Front"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.001, 4.4, -1.99622)
+shape = SubResource("BoxShape3D_lyji0")
+
+[node name="Socket Top Back" type="StaticBody3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_avll5")
+
+[node name="Socket Pos" type="Node3D" parent="Socket Top Back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.4, -4)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Socket Top Back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.001, 4.4, -2.44098)
+shape = SubResource("BoxShape3D_lyji0")
 
 [node name="Block Building" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, -2.2)

@@ -11,7 +11,7 @@ material = SubResource("StandardMaterial3D_uu6gf")
 size = Vector3(4, 0.4, 4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bx4p8"]
-size = Vector3(4, 0.2, 4)
+size = Vector3(3.05228, 0.2, 3.14172)
 
 [node name="Wall_Ghost" type="Node3D"]
 script = ExtResource("1_ry7cm")

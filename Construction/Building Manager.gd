@@ -6,8 +6,12 @@ extends Node
 
 @export var GHOST_FOUNDATION : PackedScene
 @export var FOUNDATION : PackedScene
+
 @export var WALL : PackedScene
 @export var GHOST_WALL : PackedScene
+
+@export var DOOR : PackedScene
+@export var GHOST_DOOR : PackedScene
 
 @export var PLAYER : CharacterBody3D
 
@@ -105,10 +109,11 @@ func check_valid(hit):
 
 func build():
 	# Place construct
-	get_window().add_child.call_deferred(construct.duplicate())
+	var construct_duplicate = construct.duplicate()
+	get_window().add_child.call_deferred(construct_duplicate)
 	# Copy the position and rotation of the ghost
-	construct.position = ghost.global_position 
-	construct.rotation = ghost.rotation
+	construct_duplicate.position = ghost.global_position 
+	construct_duplicate.rotation = ghost.rotation
 
 func _on_wall_mouse_entered():
 	# Set current construction and ghost to wall
@@ -119,7 +124,18 @@ func _on_wall_mouse_entered():
 	get_window().add_child.call_deferred(ghost)
 	
 func _on_foundation_mouse_entered():
-	pass
-	# Set current  construction and ghost to foundation
-	# construct = FOUNDATION.instantiate()
-	# ghost = GHOST_FOUNDATION.instantiate()
+	# Set current construction and ghost to foundation
+	construct = FOUNDATION.instantiate()
+	
+	get_window().remove_child.call_deferred(ghost)	
+	ghost = GHOST_FOUNDATION.instantiate()
+	get_window().add_child.call_deferred(ghost)
+
+
+func _on_door_mouse_entered():
+	# Set current construction and ghost to door
+	construct = DOOR.instantiate()
+	
+	get_window().remove_child.call_deferred(ghost)	
+	ghost = GHOST_DOOR.instantiate()
+	get_window().add_child.call_deferred(ghost)
