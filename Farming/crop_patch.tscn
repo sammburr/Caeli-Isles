@@ -1,0 +1,139 @@
+[gd_scene load_steps=7 format=3 uid="uid://lumxms1phlj7"]
+
+[ext_resource type="Script" path="res://Farming/Crop Socket.gd" id="1_fudpu"]
+[ext_resource type="Script" path="res://Construction/Block Building.gd" id="1_r3qet"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5x5yl"]
+albedo_color = Color(0.207843, 0.145098, 0.0588235, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_b0o7h"]
+material = SubResource("StandardMaterial3D_5x5yl")
+size = Vector3(5, 0.1, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rilaa"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dw073"]
+size = Vector3(5, 5, 5)
+
+[node name="Crop Patch" type="Node3D"]
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+mesh = SubResource("BoxMesh_b0o7h")
+
+[node name="Crop Socket 1" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.599533, 1.92349)
+collision_layer = 8
+collision_mask = 9
+script = ExtResource("1_fudpu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crop Socket 1"]
+shape = SubResource("BoxShape3D_rilaa")
+
+[node name="Socket Pos" type="Node3D" parent="Crop Socket 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.446003, 0)
+
+[node name="Crop Socket 2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.599533, -0.00203979)
+collision_layer = 8
+collision_mask = 9
+script = ExtResource("1_fudpu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crop Socket 2"]
+shape = SubResource("BoxShape3D_rilaa")
+
+[node name="Socket Pos" type="Node3D" parent="Crop Socket 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.446003, 0.00329065)
+
+[node name="Crop Socket 3" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.599533, -1.58249)
+collision_layer = 8
+collision_mask = 9
+script = ExtResource("1_fudpu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crop Socket 3"]
+shape = SubResource("BoxShape3D_rilaa")
+
+[node name="Socket Pos" type="Node3D" parent="Crop Socket 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.446003, -0.0795624)
+
+[node name="Crop Socket 4" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.49068, 0.599533, -1.58249)
+collision_layer = 8
+collision_mask = 9
+script = ExtResource("1_fudpu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crop Socket 4"]
+shape = SubResource("BoxShape3D_rilaa")
+
+[node name="Socket Pos" type="Node3D" parent="Crop Socket 4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.446003, -0.0795624)
+
+[node name="Crop Socket 5" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.49068, 0.599533, 0.00682366)
+collision_layer = 8
+collision_mask = 9
+script = ExtResource("1_fudpu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crop Socket 5"]
+shape = SubResource("BoxShape3D_rilaa")
+
+[node name="Socket Pos" type="Node3D" parent="Crop Socket 5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.446003, -0.0795624)
+
+[node name="Crop Socket 6" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.49068, 0.599533, 1.81619)
+collision_layer = 8
+collision_mask = 9
+script = ExtResource("1_fudpu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crop Socket 6"]
+shape = SubResource("BoxShape3D_rilaa")
+
+[node name="Socket Pos" type="Node3D" parent="Crop Socket 6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.446003, -0.0795624)
+
+[node name="Crop Socket 7" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.55122, 0.599533, 1.81619)
+collision_layer = 8
+collision_mask = 9
+script = ExtResource("1_fudpu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crop Socket 7"]
+shape = SubResource("BoxShape3D_rilaa")
+
+[node name="Socket Pos" type="Node3D" parent="Crop Socket 7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.446003, -0.0795624)
+
+[node name="Crop Socket 8" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.55122, 0.599533, 0.0955517)
+collision_layer = 8
+collision_mask = 9
+script = ExtResource("1_fudpu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crop Socket 8"]
+shape = SubResource("BoxShape3D_rilaa")
+
+[node name="Socket Pos" type="Node3D" parent="Crop Socket 8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.446003, -0.0795624)
+
+[node name="Crop Socket 9" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.55122, 0.599533, -1.49269)
+collision_layer = 8
+collision_mask = 9
+script = ExtResource("1_fudpu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crop Socket 9"]
+shape = SubResource("BoxShape3D_rilaa")
+
+[node name="Socket Pos" type="Node3D" parent="Crop Socket 9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.446003, -0.0795624)
+
+[node name="Block Building" type="StaticBody3D" parent="."]
+collision_layer = 4
+collision_mask = 5
+script = ExtResource("1_r3qet")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Block Building"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+shape = SubResource("BoxShape3D_dw073")

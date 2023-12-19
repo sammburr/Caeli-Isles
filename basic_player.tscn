@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bwwhl6hftkw7t"]
+[gd_scene load_steps=7 format=3 uid="uid://bwwhl6hftkw7t"]
 
 [ext_resource type="Script" path="res://basic_player.gd" id="1_qq6iv"]
 [ext_resource type="Script" path="res://Head.gd" id="2_7yqcp"]
+[ext_resource type="Script" path="res://UI.gd" id="3_svgnp"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_crila"]
 
@@ -9,9 +10,10 @@
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xwqui"]
 
-[node name="Basic Player" type="CharacterBody3D" node_paths=PackedStringArray("HEAD")]
+[node name="Basic Player" type="CharacterBody3D" node_paths=PackedStringArray("HEAD", "UI")]
 script = ExtResource("1_qq6iv")
 HEAD = NodePath("Head")
+UI = NodePath("UI")
 KEY_BIND_UP = "forward"
 KEY_BIND_LEFT = "left"
 KEY_BIND_RIGHT = "right"
@@ -41,6 +43,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("3_svgnp")
 
 [node name="Cross Hair" type="TextureRect" parent="UI"]
 layout_mode = 1
@@ -56,3 +59,16 @@ offset_bottom = 2.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("PlaceholderTexture2D_xwqui")
+
+[node name="Mode Farm" type="RichTextLabel" parent="UI"]
+layout_mode = 0
+offset_right = 126.0
+offset_bottom = 25.0
+text = "Farming: False"
+
+[node name="Mode Build" type="RichTextLabel" parent="UI"]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 126.0
+offset_bottom = 49.0
+text = "Building: False"

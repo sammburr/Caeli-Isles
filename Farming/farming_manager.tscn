@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtj0psnjwi2cp"]
+
+[ext_resource type="Script" path="res://Farming/farming_manager.gd" id="1_jbkjn"]
+[ext_resource type="PackedScene" uid="uid://bx3vb2qe1kle0" path="res://Farming/Prefabs/Carrot_Ghost.tscn" id="2_8p4w7"]
+[ext_resource type="PackedScene" uid="uid://byjyc5pc8mk0d" path="res://Farming/Prefabs/Carrot.tscn" id="3_bgujv"]
+
+[node name="Farming Manager" type="Node"]
+script = ExtResource("1_jbkjn")
+GHOST_CARROT = ExtResource("2_8p4w7")
+CARROT = ExtResource("3_bgujv")
+
+[node name="Farming UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

@@ -33,8 +33,6 @@ var player_head_raycast : RayCast3D
 func _ready():
 	# Reference player's head raycast
 	player_head_raycast = PLAYER.HEAD.RAYCAST
-	# Set the collision mask to look for regular collisions and construction collisions
-	player_head_raycast.collision_mask = 1|2
 	# Create a copy of ghost foundation and hide it
 	ghost = GHOST_FOUNDATION.instantiate()
 	ghost.hide()
@@ -60,8 +58,16 @@ func _input(event):
 
 func _process(delta):
 	if building:
+		# Display debug on player UI
+		PLAYER.UI.MODE_BUILD.text = "building: True"
+	
+		# Set the collision mask to look for regular collisions and construction collisions
+		player_head_raycast.set_collision_mask_value(1, true)
+		player_head_raycast.set_collision_mask_value(2, true)
+		player_head_raycast.set_collision_mask_value(4, false)
 		place_ghost()
 	else:
+		PLAYER.UI.MODE_BUILD.text = "building: False"
 		can_place = false
 		ghost.hide()
 
@@ -79,7 +85,7 @@ func close_wheel():
 
 func place_ghost():
 	# Place a ghost on the floor to see where a construction is placed
-	
+
 	# Fire ray cast from head to try and hit a collider
 	hit = player_head_raycast.get_collider()
 	var pos = player_head_raycast.get_collision_point()

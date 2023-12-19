@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 @export var HEAD : Node3D
+@export var UI : Control
 
 @export_category("Movement")
 @export_subgroup("Settings")
